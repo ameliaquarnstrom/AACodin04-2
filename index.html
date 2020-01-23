@@ -1,8 +1,14 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title> AACoding02-2</title>
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - AACoding02-2</title>
 <style>
 .correct{
   background:palegreen;
@@ -10,6 +16,15 @@
 
 .incorrect{
   background:salmon;
+}
+h1{
+  background-color:#FED4F0;
+  color:#353842
+}
+
+
+body{
+  background-image:url("https://images.wallpaperscraft.com/image/beach_sea_beach_sunset_112831_2560x1080.jpg")
 }
 </style>
 </head>
@@ -20,8 +35,14 @@
 <source src="https://math.seattleacademy.org/garyanderson/snd/sad.mp3" type="audio/mpeg">
 Your browser does not support the audio tag
 </audio>
+</audio>
+<audio id="happy" controls>
+<source src="https://ameliaquarnstrom.github.io/AACoding04-2/snd/ding.mp3" type="audio/mpeg">
+</audio>
 <h1>amelia's 10 favorite math problem</h1>
-<div>Timer: <span id="theTime">0</span> Score: <span id="score">0</span></div>
+<div>Timer: <span id="theTime">0</span> Score: <span id="score"> 0 </span>
+Name: <input type="text" name="fullname">
+</div>
 <ol>
 <li>\( \sqrt[3]{8} + \sqrt[3]{27} \)
 <input data-correct="5" />
@@ -71,7 +92,7 @@ function onChange(evt) {
     theScore = theScore + 1;
     $("#score").text(theScore);
   } else {
-    if (Math.random() > 0.1) {
+    if (Math.random() > 0) {
       sad.play();
     }
     $(this)
@@ -79,6 +100,26 @@ function onChange(evt) {
       .addClass("incorrect");
   }
 }
+{
+ let theScore = Number($("#score").text());
+    theScore = theScore + 1;
+    $("#score").text(theScore);
+  }{
+    if (Math.random() > 0.9) {
+      happy.play();
+    }
+  { $(this)
+      .removeClass("incorrect")
+      .addClass("correct");
+  }
+}
+var button = document.createElement("button");
+button.innerHTML = "Reset"
+var body = document.getElementsByTagName("body")[0];
+body.appendChild(button);
+button.addEventListener ("click", function() {
+  alert("reset");
+});
     </script>
 </body>
 </html>
